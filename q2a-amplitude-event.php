@@ -60,14 +60,8 @@ class q2a_amplitude_event{
                 break;
         }
 
-        $timeout = new Q2A_Util_Timeout();
-        try {
-            $timeout->set(2);
             if(!empty($eventProperties))
                 $amplitude->logEvent(qa_lang_html('plugin_amplitude_tagging/'.$event),$eventProperties);
-        } catch(TimeoutException $e) {
-            // timed out process, none for the moment.
-        }
 
 
     }

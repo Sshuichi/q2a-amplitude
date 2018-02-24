@@ -41,10 +41,13 @@ class q2a_amplitude_event{
             case 'q_post':
             case 'a_post':
             case 'c_post':
+                $eventProperties['size'] = strlen($params['text']);
+                break;
             case 'q_edit':
             case 'a_edit':
             case 'c_edit':
-                $eventProperties['size'] = strlen($params['text']);
+                $eventProperties['newsize'] = strlen($params['content']);
+                $eventProperties['oldsize'] = strlen($params['oldcontent']);
                 break;
             case 'a_select':
             case 'a_unselect':

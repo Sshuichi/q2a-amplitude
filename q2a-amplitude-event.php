@@ -39,9 +39,18 @@ class q2a_amplitude_event{
                 break;
 
             case 'q_post':
-            case 'a_post':
             case 'c_post':
                 $eventProperties['size'] = strlen($params['text']);
+                break;
+            case 'a_post':
+                $eventProperties['size'] = strlen($params['text']);
+                $amplitude->setUserId($params['parent']['email']);
+                if(qa_get_logged_in_level()>=QA_USER_LEVEL_EXPERT)
+                    $eventName = qa_lang_html('plugin_amplitude_tagging/received_answer_from_expert');
+                else
+                    $eventName = qa_lang_html('plugin_amplitude_tagging/received_answer');
+                $amplitude->logEvent($eventName,$eventProperties);
+                $amplitude->setUserId($userEmail);
                 break;
             case 'q_edit':
             case 'a_edit':

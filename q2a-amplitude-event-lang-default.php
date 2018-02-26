@@ -22,6 +22,8 @@ return array(
     'c_edit' => 'Edited a comment',
     'a_select' => 'Selected an answer',
     'a_unselect' => 'Unselected an answer',
+    'received_answer' => 'Received an answer',
+    'received_answer_from_expert' => 'Received an answer from expert',
 
     'search' => 'Searched',
 );

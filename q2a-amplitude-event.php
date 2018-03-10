@@ -14,7 +14,10 @@ class q2a_amplitude_event{
     function process_event($event, $userid, $handle, $cookieid, $params)
     {
         $amplitude = new Amplitude();
-        $userEmail = qa_is_logged_in()?qa_get_logged_in_email():$cookieid;
+        $userEmail = $userid?qa_get_logged_in_email()
+            :!empty($params)?
+                (isset($params['email'])?$params['email']
+                :$cookieid) :$cookieid ;
         $userProperties = array(
             'userName' =>$handle
         );
@@ -25,7 +28,7 @@ class q2a_amplitude_event{
         switch($event){
             case 'u_logout':
             case 'u_login':
-                $eventProperties['referer'] = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
+                $eventProperties['referer'] = isset($_SERVER['HTTP_REFERER'])?parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH):'direct';
                 break;
 
             case 'u_confirmed':

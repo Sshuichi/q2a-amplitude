@@ -14,8 +14,7 @@ class q2a_amplitude_event{
     function process_event($event, $userid, $handle, $cookieid, $params)
     {
         $amplitude = new Amplitude();
-        $userEmail = $userid?qa_get_logged_in_email():qa_cookie_get_create();
-
+        $userEmail = qa_get_logged_in_email()?qa_get_logged_in_email():qa_cookie_get_create();
 
         $userProperties = array(
             'userName' =>$handle

@@ -24,6 +24,7 @@ return array(
     'a_unselect' => 'Unselected an answer',
     'received_answer' => 'Received an answer',
     'received_answer_from_expert' => 'Received an answer from expert',
+    'u_paid' => 'Paid question',
 
     'search' => 'Searched',
 );

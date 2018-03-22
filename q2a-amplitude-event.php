@@ -68,6 +68,12 @@ class q2a_amplitude_event{
                 $eventProperties['query'] = $params['query'];
                 $eventProperties['referer'] = isset($_SERVER['HTTP_REFERER'])?parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH):'direct';
                 break;
+
+            case 'u_paid':
+                $amplitude->setUserId($params['email']);
+                $eventProperties['amount'] = $params['amount'];
+                $eventProperties['package'] = $params['package'];
+                break;
         }
 
             if(!empty($eventProperties))

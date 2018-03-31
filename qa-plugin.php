@@ -27,3 +27,7 @@ qa_register_plugin_phrases(
     'q2a-amplitude-event-lang-*.php', // pattern for language files
     'plugin_amplitude_tagging' // prefix to retrieve phrases
 );
+qa_register_plugin_layer(
+    'q2a-amplitude-layer.php', // pattern for language files
+    'qa_html_theme_layer' // prefix to retrieve phrases
+);

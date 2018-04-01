@@ -7,13 +7,6 @@
  */
 class qa_html_theme_layer extends qa_html_theme_base
 {
-    public function head_css()
-    {
-        $this->content['css_src'][]=qa_html(QA_HTML_THEME_LAYER_URLTOROOT.'css/premium.css');
-        qa_html_theme_base::head_css();
-
-
-    }
     public function head_script(){
         qa_html_theme_base::head_script();
         $js= "(function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement(\"script\")
@@ -39,7 +32,7 @@ class qa_html_theme_layer extends qa_html_theme_base
               ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
               ;e.amplitude=n})(window,document);
 
-              amplitude.getInstance().init('".qa_opt('amplitude_key')."');
+              amplitude.getInstance().init('".qa_opt('amplitude_key')."','".qa_get_logged_in_user_field('email')."');
 </script>";
         $this->output('<script type="text/javascript">'.$js.'</script>');
     }

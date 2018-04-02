@@ -72,6 +72,7 @@ class q2a_amplitude_event{
             case 'u_paid':
                 $amplitude->setUserId($params['email']);
                 $eventProperties['amount'] = $params['amount'];
+                $eventProperties['price'] = $params['price'];
                 $eventProperties['package'] = $params['package'];
                 break;
         }

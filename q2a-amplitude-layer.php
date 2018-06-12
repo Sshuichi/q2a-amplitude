@@ -31,7 +31,7 @@ class qa_html_theme_layer extends qa_html_theme_base
                 e=(!e||e.length===0?'':e).toLowerCase()
                 ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
                 ;e.amplitude=n})(window,document);
-              amplitude.getInstance().init('".qa_opt('amplitude_key')."','".qa_get_logged_in_user_field('email')."');
+              amplitude.getInstance().init('".qa_opt('amplitude_key')."');
 </script>";
         $this->output('<script type="text/javascript">'.$js.'</script>');
     }

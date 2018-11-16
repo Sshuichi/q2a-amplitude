@@ -47,7 +47,7 @@ class q2a_amplitude_event{
                 $eventProperties['post_id'] = $params['parent']['postid'];
                 break;
             case 'a_post':
-                $eventProperties['size'] = strlen($params['text']);
+                /*$eventProperties['size'] = strlen($params['text']);
                 $eventProperties['post_id'] = $params['parent']['postid'];
                 $amplitude->setUserId($params['parent']['email']);
                 if(qa_get_logged_in_level()>=QA_USER_LEVEL_EXPERT)
@@ -55,7 +55,7 @@ class q2a_amplitude_event{
                 else
                     $eventName = qa_lang_html('plugin_amplitude_tagging/received_answer');
                 $amplitude->logEvent($eventName,$eventProperties);
-                $amplitude->setUserId($userEmail);
+                $amplitude->setUserId($userEmail);*/
                 break;
             case 'q_edit':
             case 'a_edit':
